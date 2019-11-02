@@ -4,8 +4,9 @@ var rowMajor = false;
 var msbendian = false;
 
 $(function() {
-  	matrix = createArray(16,16);
-  	updateTable();
+
+	matrix = createArray(16,16);
+	updateTable();
 	initOptions();
 
 	$('#_output').hide();
@@ -166,9 +167,10 @@ function populateTable(table, rows, cells, content) {
 
 // (height, width)
 function createArray(length) {
-    var arr = new Array(length || 0),
-        i = length;
 
+	var arr = new Array(length || 0),
+		i = length;
+		
     if (arguments.length > 1) {
         var args = Array.prototype.slice.call(arguments, 1);
         while(i--) arr[length-1 - i] = createArray.apply(this, args);
@@ -176,3 +178,38 @@ function createArray(length) {
 
     return arr;
 }
+
+
+
+var add_height = document.getElementById("add_height");
+add_height.addEventListener("keyup", function(event) {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		var height_ul = document.getElementById('dropdown_height');
+		var height_li = document.createElement("li");
+		var height_a  = document.createElement("a");
+		height_a.href = "#";
+		height_a.innerText = add_height.value;
+		height_li.appendChild(height_a);
+		height_ul.prepend(height_li);
+		initOptions();
+	}
+});
+
+
+
+var add_width = document.getElementById("add_width");
+add_width.addEventListener("keyup", function(event) {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		var width_ul = document.getElementById('dropdown_width');
+		var width_li = document.createElement("li");
+		var width_a  = document.createElement("a");
+		width_a.href = "#";
+		width_a.innerText = add_width.value;
+		width_li.appendChild(width_a);
+		width_ul.prepend(width_li);
+	
+		initOptions();
+	}
+	});
