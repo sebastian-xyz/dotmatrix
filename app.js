@@ -153,9 +153,13 @@ function toggle(e) {
 function populateTable(table, rows, cells, content) {
     if (!table) table = document.createElement('table');
     for (var i = 0; i < rows; ++i) {
-        var row = document.createElement('tr');
+		var row = document.createElement('tr');
+		row.id = i;
         for (var j = 0; j < cells; ++j) {
-            row.appendChild(document.createElement('td'));
+			var tr = document.createElement('td');
+			tr.id = j ;
+			tr.setAttribute('onmouseover' , "coordinates(" + tr.id +','+ row.id + ");");
+            row.appendChild(tr);
             $(row.cells[j]).data('i', i);
             $(row.cells[j]).data('j', j);
         }
@@ -212,4 +216,10 @@ add_width.addEventListener("keyup", function(event) {
 	
 		initOptions();
 	}
-	});
+});
+
+
+function coordinates(row , col){
+	document.getElementById('coor_row').innerText = row;
+	document.getElementById('coor_col').innerText = col;
+}
