@@ -4,5 +4,9 @@ A web application for generating character or image byte arrays for dot matrix s
 
 Use it live at https://mahmod.dev/dotmatrix
 
+# What's New :
+
+- You Can Customize Your Specific Dimensions.
+- Show Coordinates Of Cursor.
 
 Forked From : https://github.com/stefangordon/dotmatrixtool
