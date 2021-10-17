@@ -2,7 +2,7 @@
 
 A web application for generating character or image byte arrays for dot matrix style OLED or LCD displays.
 
-Use it live at https://mahmod.dev/dotmatrix
+Use it live at https://m7modg97.github.io/dotmatrix/
 
 # What's New ?
 
