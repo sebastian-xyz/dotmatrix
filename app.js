@@ -121,7 +121,7 @@ function generateByteArray() {
 					buffer[y * width + x] = "false";
 				}
 				else {
-					buffer[x * height + y] = "true";
+					buffer[y * width + x] = "true";
 				}
 			}
 
