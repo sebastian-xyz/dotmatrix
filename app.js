@@ -1,6 +1,6 @@
 var matrix;
 var $table;
-var rowMajor = false;
+var rowMajor = true;
 var msbendian = false;
 
 $(function () {
